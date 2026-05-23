@@ -21,3 +21,14 @@ The Generative Engine Optimization (GEO) platform audit and diagnostics suite. I
 
 ## Architecture Integration
 Surgically imports core layouts (`LightLayout`) and custom subdomain URL handlers from the root `/shared` folder.
+
+## 🚀 Vercel Production Deployment
+
+To deploy this sub-application independently on Vercel:
+
+1. **Root Directory**: `.` (Set to the repository root, **NOT** `apps/intelligence`)
+2. **Build Command**: `npm run build --prefix apps/intelligence`
+3. **Output Directory**: `apps/intelligence/dist`
+4. **Install Command**: `npm install --prefix apps/intelligence`
+
+Setting the root context gives Vercel full access to resolve sibling `@shared` directories.

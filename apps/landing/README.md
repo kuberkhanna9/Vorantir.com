@@ -21,3 +21,14 @@ The corporate landing portal for the Vorantir AI-Native Strategy & Intelligence 
 
 ## Architecture Integration
 Uses the root `/shared` folder for global design styling tokens, day/night layouts, and subdomain URL bridging resolver.
+
+## 🚀 Vercel Production Deployment
+
+To deploy this sub-application independently on Vercel:
+
+1. **Root Directory**: `.` (Set to the repository root, **NOT** `apps/landing`)
+2. **Build Command**: `npm run build --prefix apps/landing`
+3. **Output Directory**: `apps/landing/dist`
+4. **Install Command**: `npm install --prefix apps/landing`
+
+Setting the root context gives Vercel full access to resolve sibling `@shared` directories.

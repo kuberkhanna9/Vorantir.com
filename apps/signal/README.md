@@ -21,3 +21,14 @@ The premium growth advisory and conversion marketing suite, operating ad campaig
 
 ## Architecture Integration
 Surgically imports core layouts (`DarkLayout`) and custom subdomain URL handlers from the root `/shared` folder.
+
+## 🚀 Vercel Production Deployment
+
+To deploy this sub-application independently on Vercel:
+
+1. **Root Directory**: `.` (Set to the repository root, **NOT** `apps/signal`)
+2. **Build Command**: `npm run build --prefix apps/signal`
+3. **Output Directory**: `apps/signal/dist`
+4. **Install Command**: `npm install --prefix apps/signal`
+
+Setting the root context gives Vercel full access to resolve sibling `@shared` directories.
