@@ -1,6 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function PageWrapper({ title, tag, subtitle, children }) {
+  useEffect(() => {
+    if (tag) {
+      document.title = `${tag} — Vorantir`;
+    }
+    
+    if (subtitle) {
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute("content", subtitle);
+      
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute("content", subtitle);
+      
+      const twDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twDesc) twDesc.setAttribute("content", subtitle);
+    }
+    
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute("href", window.location.href);
+    
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute("content", window.location.href);
+  }, [tag, subtitle]);
   return (
     <div className="bg-[#f3efe8] text-[#11110f] min-h-screen pt-36 pb-28 relative overflow-hidden [perspective:1800px]">
       {/* Background Atmosphere Elements */}

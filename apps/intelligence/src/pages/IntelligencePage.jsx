@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const llmLogos = [
@@ -25,6 +25,34 @@ const llmLogos = [
 ];
 
 export default function IntelligencePage() {
+  useEffect(() => {
+    document.title = "Vorantir Intelligence — Generative Engine Optimisation & AI Visibility";
+    
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Audit competitor share of voice, semantic attribution paths, and representation authority within modern generative engines and LLMs in real-time.");
+    }
+    
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) {
+      ogDesc.setAttribute("content", "Audit competitor share of voice, semantic attribution paths, and representation authority within modern generative engines and LLMs in real-time.");
+    }
+    
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) {
+      twDesc.setAttribute("content", "Audit competitor share of voice, semantic attribution paths, and representation authority within modern generative engines and LLMs in real-time.");
+    }
+    
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute("href", "https://intelligence.vorantir.com/");
+    }
+    
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute("content", "https://intelligence.vorantir.com/");
+    }
+  }, []);
   const navigate = useNavigate();
 
   const navigateTo = (page) => {

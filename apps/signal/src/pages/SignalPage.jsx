@@ -1,8 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import unsplashBg from "@shared/assets/cinematic_sky_background.png";
 
 export default function SignalPage() {
+  useEffect(() => {
+    document.title = "Vorantir Signal — Strategic Growth, Media & Brand Positioning";
+    
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Scale growth, high-impact creative campaigns, and mathematically managed paid performance media for modern consumer and luxury brands.");
+    }
+    
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) {
+      ogDesc.setAttribute("content", "Scale growth, high-impact creative campaigns, and mathematically managed paid performance media for modern consumer and luxury brands.");
+    }
+    
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) {
+      twDesc.setAttribute("content", "Scale growth, high-impact creative campaigns, and mathematically managed paid performance media for modern consumer and luxury brands.");
+    }
+    
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute("href", "https://signal.vorantir.com/");
+    }
+    
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute("content", "https://signal.vorantir.com/");
+    }
+  }, []);
   const navigate = useNavigate();
   const [activeRoleTab, setActiveRoleTab] = useState("founders");
   const [activeFaq, setActiveFaq] = useState(null);
