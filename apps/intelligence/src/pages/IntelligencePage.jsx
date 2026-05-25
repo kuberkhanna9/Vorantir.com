@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import dashboardImg from "@shared/assets/Landing.png";
 
 const llmLogos = [
   {
@@ -164,7 +165,7 @@ export default function IntelligencePage() {
 
           <div className="relative rounded-[24px] sm:rounded-[32px] overflow-hidden border border-black/5 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.06)] lg:shadow-[0_30px_120px_rgba(0,0,0,0.08)] mt-8 lg:mt-0">
             <img
-              src="/Landing.png"
+              src={dashboardImg}
               alt="Vorantir Dashboard"
               className="w-full h-full object-cover"
             />

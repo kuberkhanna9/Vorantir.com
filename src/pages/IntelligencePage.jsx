@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import dashboardImg from "../../Landing.png";
 
 const llmLogos = [
   {
@@ -25,6 +26,34 @@ const llmLogos = [
 ];
 
 export default function IntelligencePage() {
+  useEffect(() => {
+    document.title = "Vorantir Intelligence — Generative Engine Optimisation & AI Visibility";
+    
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Audit competitor share of voice, semantic attribution paths, and representation authority within modern generative engines and LLMs in real-time.");
+    }
+    
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) {
+      ogDesc.setAttribute("content", "Audit competitor share of voice, semantic attribution paths, and representation authority within modern generative engines and LLMs in real-time.");
+    }
+    
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) {
+      twDesc.setAttribute("content", "Audit competitor share of voice, semantic attribution paths, and representation authority within modern generative engines and LLMs in real-time.");
+    }
+    
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute("href", "https://intelligence.vorantir.com/");
+    }
+    
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute("content", "https://intelligence.vorantir.com/");
+    }
+  }, []);
   const navigate = useNavigate();
 
   const navigateTo = (page) => {
@@ -136,7 +165,7 @@ export default function IntelligencePage() {
 
           <div className="relative rounded-[24px] sm:rounded-[32px] overflow-hidden border border-black/5 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.06)] lg:shadow-[0_30px_120px_rgba(0,0,0,0.08)] mt-8 lg:mt-0">
             <img
-              src="/Landing.png"
+              src={dashboardImg}
               alt="Vorantir Dashboard"
               className="w-full h-full object-cover"
             />
