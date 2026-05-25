@@ -8,17 +8,17 @@ export default function LandingPage() {
     
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute("content", "Vorantir is a privately held group operating across artificial intelligence, strategic implementation, and emerging research initiatives built for the next generation of enterprise systems.");
+      metaDesc.setAttribute("content", "Premium intelligence, strategic positioning, and digital influence infrastructure for modern brands.");
     }
     
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) {
-      ogDesc.setAttribute("content", "Vorantir is a privately held group operating across artificial intelligence, strategic implementation, and emerging research initiatives built for the next generation of enterprise systems.");
+      ogDesc.setAttribute("content", "Premium intelligence, strategic positioning, and digital influence infrastructure for modern brands.");
     }
     
     const twDesc = document.querySelector('meta[name="twitter:description"]');
     if (twDesc) {
-      twDesc.setAttribute("content", "Vorantir is a privately held group operating across artificial intelligence, strategic implementation, and emerging research initiatives built for the next generation of enterprise systems.");
+      twDesc.setAttribute("content", "Premium intelligence, strategic positioning, and digital influence infrastructure for modern brands.");
     }
     
     const canonical = document.querySelector('link[rel="canonical"]');
@@ -29,6 +29,16 @@ export default function LandingPage() {
     const ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) {
       ogUrl.setAttribute("content", "https://vorantir.com/");
+    }
+    
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Vorantir — Intelligence, Strategy & Digital Influence");
+    }
+    
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) {
+      twTitle.setAttribute("content", "Vorantir — Intelligence, Strategy & Digital Influence");
     }
   }, []);
   const navigate = useNavigate();
