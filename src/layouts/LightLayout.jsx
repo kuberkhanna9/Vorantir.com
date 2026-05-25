@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Navbar from "../components/Navbar.jsx";
-import Footer from "../components/Footer.jsx";
+import Navbar from "../../shared/components/Navbar.jsx";
+import Footer from "../../shared/components/Footer.jsx";
 
 export default function LightLayout() {
   const location = useLocation();
